@@ -6,7 +6,7 @@ ONBUILD RUN curl -L https://www.opscode.com/chef/install.sh | bash
 ONBUILD RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc
 ONBUILD RUN /opt/chef/embedded/bin/gem install -r berkshelf
 
-ONBUILD yum -y remove perl perl-* *-headers *-devel gcc gcc-c++ tar make
-ONBUILD yum clean all
+ONBUILD RUN yum -y remove perl perl-* *-headers *-devel gcc gcc-c++ tar make
+ONBUILD RUN yum clean all
 
 
